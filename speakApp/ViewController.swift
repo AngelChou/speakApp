@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     
     func speak(str: String, lan: String) {
-        let speechUtterance =  AVSpeechUtterance(string: str)
+        let speechUtterance = AVSpeechUtterance(string: str)
         speechUtterance.rate = sliders[0].value
         speechUtterance.pitchMultiplier = sliders[1].value
         speechUtterance.volume = sliders[2].value
@@ -50,6 +50,8 @@ class ViewController: UIViewController {
     @IBAction func sliderChanged(_ sender: UISlider) {
         let index = sender.tag
         labels[index].text = String(format: "%.2f", sliders[index].value)
+    }
+    @IBAction func closeKeyboard(_ sender: Any) {
     }
 }
 
